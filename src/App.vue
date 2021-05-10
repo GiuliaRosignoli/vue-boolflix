@@ -2,12 +2,12 @@
   <div id="app">
     <header>
        <Header @startingSearch="getFilm" 
-               @resetInputField="resetInputField"
+              
        />
     </header>
 
     <main>
-      <Main v-bind:filmsList="films" />
+      <Main v-bind:filmsList="films"/>
     </main>
   </div>
 </template>
@@ -42,10 +42,7 @@ export default {
                 console.log('Error:', err)
             })
         },
-        resetInputField(){
-          this.searchFilm = "";
-          this.$emit('resetInputField', this.searchFilm)
-        }
+        
     }
 }
 </script>

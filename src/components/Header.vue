@@ -6,7 +6,7 @@
          <div class="filler"></div>
         <input type="text" placeholder="Search film"  v-model.trim ="searchFilm">
         <button @click="$emit('startingSearch', searchFilm)">Search</button>
-        <button class="right" @click="$emit('resetInputField', searchFilm)">Reset</button>
+        <button class="right" @click="resetInputField">Reset</button>
     </div>
     
 </template>
@@ -22,6 +22,15 @@ export default {
             logo: "https://fontmeme.com/permalink/210510/3f37c13a0705940786b250f7aaa9cafa.png",
         }
     },
+    methods: {
+        resetInputField(){
+            console.log("test")
+          this.searchFilm = "";
+     /*     this.$emit('resetInputField', this.searchFilm) */
+        
+        }
+    }
+    
     
 }
 </script>
