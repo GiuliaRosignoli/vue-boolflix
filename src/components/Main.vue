@@ -1,10 +1,11 @@
 <template>
-    <div>test</div>
+    <div>{{ filmsList}}</div>
 </template>
 
 <script>
 export default {
     name: "Main",
+    props: ["filmsList"],
 
 }
 </script>
