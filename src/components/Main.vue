@@ -1,5 +1,10 @@
 <template>
-    <h2 v-for="(film, index) in films" v-bind:key="index">{{ filmsList.title}}</h2>
+    <div>
+        <ul>
+            <li v-for="(film, index) in films" v-bind:key="index">{{ filmsList.title}}</li>
+        </ul>
+    </div>
+    
 </template>
 
 <script>
