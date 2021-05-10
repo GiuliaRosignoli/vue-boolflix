@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <header>
-       <Header @startingSearch="getFilm" />
+       <Header @startingSearch="getFilm" 
+               @resetInputField="resetInputField"
+       />
     </header>
 
     <main>
@@ -27,9 +29,7 @@ export default {
             films: [],
         }
     },
-  /*  created() {
-        this.getFilm()
-    }, */
+
     methods: {
         getFilm(searchFilm) {
             axios.get(this.apiURL + searchFilm)
@@ -42,11 +42,10 @@ export default {
                 console.log('Error:', err)
             })
         },
-      /*  searchingFilm(text) {
-            console.log("Text inserted: ", text);
-
-            this.searchFilm = text;
-        } */
+        resetInputField(){
+          this.searchFilm = "";
+          this.$emit('resetInputField', this.searchFilm)
+        }
     }
 }
 </script>

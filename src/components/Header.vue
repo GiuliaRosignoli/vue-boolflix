@@ -6,6 +6,7 @@
          <div class="filler"></div>
         <input type="text" placeholder="Search film"  v-model.trim ="searchFilm">
         <button @click="$emit('startingSearch', searchFilm)">Search</button>
+        <button class="right" @click="$emit('resetInputField', searchFilm)">Reset</button>
     </div>
     
 </template>
@@ -44,19 +45,22 @@ export default {
         align-self: center;
         margin-right: 1rem;
         padding: 8px;
-        width: 20rem;
+        width: 15rem;
         max-width: 100%;
-        height: 2.4rem;
+        height: 1.6rem;
         max-height: 100%;
         background-color: $lighterpurple;
         color: $darkerpurple;
+        &:hover {
+            background-color: #fff;
+        }
 
     }
     button {
         align-self: center;
-        width: 4rem;
+        width: 3.8rem;
+        margin: 0.4rem;
         padding: 8px 8px;
-        margin-right: 3rem;
         height: 2.4rem;
         padding: 5px;
         background-color: $purple-1;
@@ -64,7 +68,14 @@ export default {
         color: $lighterpurple;
         &:hover {
             transform: scale(1.3);
+            background-color: $lighterpurple;
+            color: $darkerpurple;
         }
+    }
+    button.right {
+        margin-right: 3rem;
+        width: 3.5rem;
+        height: 2.2rem;
     }
 }
 

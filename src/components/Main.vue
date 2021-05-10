@@ -1,5 +1,5 @@
 <template>
-    <div>{{ filmsList}}</div>
+    <h2 v-for="(film, index) in films" v-bind:key="index">{{ filmsList.title}}</h2>
 </template>
 
 <script>
