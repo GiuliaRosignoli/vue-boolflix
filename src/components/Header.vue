@@ -40,9 +40,10 @@ export default {
 @import "../styles/vars.scss";
 @import "../styles/utilities.scss";
 
+
 .wrapper {
-    
     align-content: center;
+    background-color: #000524;
     a {
         img {
             width: 14rem;

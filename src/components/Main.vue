@@ -26,6 +26,7 @@ export default {
 @import "../styles/utilities.scss";
 
 
+
 .film-container {
     justify-content: center;
     flex-wrap: wrap;
@@ -38,12 +39,12 @@ export default {
     flex-basis: calc(100% / 6 - 20px);
     padding: 10px;
     margin-bottom: 20px;
-    background-color: lightblue
 }
 
 .single-film li img {
     width: 20px;
     height: 20px;
+    padding: 2px;
 }
 
 
