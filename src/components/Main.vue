@@ -1,7 +1,7 @@
 <template>
     <div class="film-container flex"> 
-        <ul class="single-film flex" v-for="(film, index) in filmsList" v-bind:key="index">
-            <li>Title: {{ film.title }}</li>
+        <ul class="single-film flex" v-if="filmsList.length > 0" v-for="(film, index) in filmsList" v-bind:key="index">
+            <li>Title: {{ film.title }} {{film.name}}</li>
             <li v-show="film.original_title !== film.title">Original Title: {{ film.original_title }}</li>
             <li v-if="film.original_language === 'it'">Language: {{ film.original_language }} <img class="flag" src="../assets/flagsImg/it.png" alt=""> </li>
             <li v-else-if="film.original_language === 'en'">Language: {{ film.original_language }} <img class="flag" src="../assets/flagsImg/en.png" alt=""></li>

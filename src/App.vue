@@ -7,7 +7,7 @@
     </header>
 
     <main>
-      <Main v-bind:filmsList="films"/>
+      <Main v-bind:filmsList="films.concat(series)"/>
     </main>
   </div>
 </template>
