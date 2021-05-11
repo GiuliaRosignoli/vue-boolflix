@@ -56,8 +56,8 @@ export default {
             .catch(err=>{
                 console.log('Error:', err)
             })
-        }, //getFilm
-         handler:function(searchFilm){
+        }, //getSeries
+         handler(searchFilm){
                     this.getFilm(searchFilm);
                     this.getSeries(searchFilm);
          }
