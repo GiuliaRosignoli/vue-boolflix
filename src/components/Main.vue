@@ -4,8 +4,7 @@
             <li>{{ film.title }}</li>
             <li>{{ film.original_title }}</li>
             <li v-if="film.original_language === 'it'">{{ film.original_language }} <img class="flag" src="../assets/flagsImg/it.png" alt=""> </li>
-            <li v-else-if="film.original_language === 'en'">{{ film.original_language }} <img class="flag" src="../assets/flagsImg/en.png" alt=""> </li>
-            <li v-else-if="film.original_language == 'en'">{{ film.original_language }} <img class="flag" src="../assets/flagsImg/it.png" alt=""> </li>
+            <li v-else-if="film.original_language === 'en'">{{ film.original_language }} <img class="flag" src="../assets/flagsImg/en.png" alt=""></li>
             <li v-else>{{ film.original_language }}</li>
             <li>{{ film.vote_average }}</li>
         </ul>
