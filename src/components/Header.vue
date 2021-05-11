@@ -26,7 +26,7 @@ export default {
         resetInputField(){
             console.log("test")
           this.searchFilm = "";
-     /*     this.$emit('resetInputField', this.searchFilm) */
+   
         
         }
     }
@@ -54,7 +54,7 @@ export default {
         align-self: center;
         margin-right: 1rem;
         padding: 8px;
-        width: 15rem;
+        width: 9.5rem;
         max-width: 100%;
         height: 1.6rem;
         max-height: 100%;
@@ -70,21 +70,24 @@ export default {
         width: 3.8rem;
         margin: 0.4rem;
         padding: 8px 8px;
-        height: 2.4rem;
+        height: 2.1rem;
         padding: 5px;
         background-color: $purple-1;
         font-weight: bold;
         color: $lighterpurple;
         &:hover {
-            transform: scale(1.3);
-            background-color: $lighterpurple;
-            color: $darkerpurple;
+        transform: scale(1.3);
+        background-color: $lighterpurple;
+        color: $darkerpurple;
+            }
         }
-    }
+        
+    
     button.right {
         margin-right: 3rem;
-        width: 3.5rem;
-        height: 2.2rem;
+        width: 2.7rem;
+        height: 1.6rem;
+        font-size: 0.5rem;
     }
 }
 
