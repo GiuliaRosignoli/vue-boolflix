@@ -1,9 +1,12 @@
 <template>
     <div class="film-container flex"> 
         <ul class="single-film flex" v-for="(film, index) in filmsList" v-bind:key="index">
-            <li>{{ film.title}}</li>
+            <li>{{ film.title }}</li>
             <li>{{ film.original_title }}</li>
-            <li>{{ film.original_language }}</li>
+            <li v-if="film.original_language === 'it'">{{ film.original_language }} <img class="flag" src="../assets/flagsImg/it.png" alt=""> </li>
+            <li v-else-if="film.original_language === 'en'">{{ film.original_language }} <img class="flag" src="../assets/flagsImg/en.png" alt=""> </li>
+            <li v-else-if="film.original_language == 'en'">{{ film.original_language }} <img class="flag" src="../assets/flagsImg/it.png" alt=""> </li>
+            <li v-else>{{ film.original_language }}</li>
             <li>{{ film.vote_average }}</li>
         </ul>
     </div>
@@ -15,7 +18,7 @@ export default {
     name: "Main",
     props: ["filmsList"],
 
-}
+} // export default
 </script>
 
 <style lang="scss" scoped>
@@ -38,5 +41,12 @@ export default {
     margin-bottom: 20px;
     background-color: lightblue
 }
+
+.single-film li img {
+    width: 20px;
+    height: 20px;
+}
+
+
 
 </style>
