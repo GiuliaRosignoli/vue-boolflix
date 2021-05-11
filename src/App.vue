@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-       <Header @startingSearch="getFilm" 
+       <Header @startingSearch="handler" 
               
        />
     </header>
@@ -57,9 +57,13 @@ export default {
                 console.log('Error:', err)
             })
         }, //getFilm
+         handler:function(searchFilm){
+                    this.getFilm(searchFilm);
+                    this.getSeries(searchFilm);
+         }
 
         
-    } // methodS section ends here
+    }, // methodS section ends here
 } //export default
 </script>
 
