@@ -10,7 +10,7 @@
                 <li>{{ film.vote_average }}</li>
             </ul>
         </div>
-        <div class="result-cont flex" v-else>
+        <div class="result-cont flex" v-else> <!-- No results found - message -->
             <h3 class="no-results">Oh darn. We don't have that. Try searching for another film or series</h3>
         </div>
     </div>
