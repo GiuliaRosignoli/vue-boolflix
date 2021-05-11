@@ -1,11 +1,10 @@
 <template>
-    <div class="flex">
-    
-        <ul class="film-list flex" v-for="(film, index) in filmsList" v-bind:key="index">
+    <div class="film-container flex"> 
+        <ul class="single-film flex" v-for="(film, index) in filmsList" v-bind:key="index">
             <li>{{ film.title}}</li>
-            <li>{{ film.original_title}}</li>
-            <li>{{ film.original_language}}</li>
-            <li>{{film.vote_average}}</li>
+            <li>{{ film.original_title }}</li>
+            <li>{{ film.original_language }}</li>
+            <li>{{ film.vote_average }}</li>
         </ul>
     </div>
     
@@ -25,14 +24,19 @@ export default {
 @import "../styles/utilities.scss";
 
 
-.film-list {
+.film-container {
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
+}
+
+.single-film {
+    justify-items: center;
     flex-direction: column;
-    li {
-        justify-items: center;
-        flex-basis: calc(100% / 6 - 10px);
-        margin-bottom: 10px;
-    }
+    flex-basis: calc(100% / 6 - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: lightblue
 }
 
 </style>
