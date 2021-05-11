@@ -15,7 +15,7 @@
 <script>
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   name: 'App',
@@ -38,6 +38,9 @@ export default {
             .then(res=>{
                 console.log(res.data);
                 this.films= res.data.results;
+             /*   if(this.films === ""){
+                  this. = "Oh darn. We don't have that. Try searching for another film or series.";
+                } */
               //  console.log(this.films)
             })
             .catch(err=>{
