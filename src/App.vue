@@ -27,16 +27,30 @@ export default {
         return {
             apiURL: "https://api.themoviedb.org/3/search/movie?api_key=e99307154c6dfb0b4750f6603256716d&query=",
             apiSeriesURL: "https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&query=", //2nd axios call
+            apiTrendingURL: "https://api.themoviedb.org/3/trending/movie/week?api_key=e99307154c6dfb0b4750f6603256716d",
             films: [],
             series: [],
             }
     }, // return
-   
+    created(){
+      axios.get(this.apiTrendingURL)
+            .then(res=>{
+                console.log(res.data);
+                this.films= res.data.results;
+            
+              //  console.log(this.films)
+            })
+            .catch(err=>{
+                console.log('Error:', err)
+            })
+    },
+
     methods: {
         getFilm(searchFilm) {
             axios.get(this.apiURL + searchFilm)
             .then(res=>{
                 console.log(res.data);
+                 this.films=[];
                 this.films= res.data.results;
             
               //  console.log(this.films)
@@ -58,6 +72,7 @@ export default {
                 console.log('Error:', err)
             })
         }, //getSeries
+
          handler(searchFilm){
                     this.getFilm(searchFilm);
                     this.getSeries(searchFilm);
