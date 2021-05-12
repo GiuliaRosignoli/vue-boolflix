@@ -1,20 +1,25 @@
 <template>
   <div id="app">
-    <header>
-       <Header @startingSearch="handler" 
-              
-       />
+    <div class="general-wrap">
+      <header>
+       <Header @startingSearch="handler" />
     </header>
 
     <main>
       <Main v-bind:filmsList="films.concat(series)"/>
     </main>
+    
+    </div> <!--General wrap -->
+    <footer>
+      <Footer />
+    </footer>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
+import Footer from './components/Footer.vue';
 import axios from 'axios';
 
 export default {
@@ -22,6 +27,7 @@ export default {
   components: {
     Header,
     Main,
+    Footer,
   },
    data(){
         return {
@@ -84,9 +90,20 @@ export default {
 </script>
 
 <style lang="scss">
+
+#app {
+  padding-top: 80px; 
+}
+
+.general-wrap {
+ position: relative;
+ height: calc(100vh - 80px);
+}
+
 main {
       background-color: #020733;
-      height: 600px; // !!!!!!!!!temporary height!!!!!!!!
+      height: 100%;
+      overflow-y: auto;
 }
 
 

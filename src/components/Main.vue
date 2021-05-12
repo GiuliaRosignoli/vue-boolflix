@@ -43,15 +43,14 @@ export default {
 }
 
 .single-film {
+    position: relative;
     justify-items: center;
     flex-direction: column;
     flex-basis: calc(100% / 5 - 20px);
     height: 180px;
     margin-bottom: 20px;
     margin: 0.5rem;
-    background-color: cadetblue;
     .poster {
-        position: relative;
         width: 100%;
         height: 100%;
        background-size: cover;
@@ -60,10 +59,12 @@ export default {
        position: absolute;
        height:100%;
        width:100%;
-       display: none;
+       opacity: 0;
+       transition: background-color 0.5s ease-in-out;
        &:hover {
-       display: block;
-   }
+       background-color: $deepblue;
+       opacity: 1;
+        }
    }
    
 }

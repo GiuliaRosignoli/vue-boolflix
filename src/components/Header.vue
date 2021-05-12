@@ -1,6 +1,7 @@
 <template>
-    <div class="wrapper flex">
-         <a href="#">
+<div class="relative"> 
+    <div class="header wrapper flex">
+         <a href="./home">
             <img v-bind:src="logo" alt="logo">
          </a>
          <div class="filler"></div>
@@ -8,6 +9,7 @@
         <button @click="$emit('startingSearch', searchFilm)">Search</button>
         <button class="right" @click="resetInputField">Reset</button>
     </div>
+</div>
     
 </template>
 
@@ -41,9 +43,16 @@ export default {
 @import "../styles/utilities.scss";
 
 
-.wrapper {
+.header.wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
     align-content: center;
-    background-color: #000524;
+    background-color: $deepblue;
+    z-index: 10;
     a {
         img {
             width: 14rem;
@@ -60,7 +69,7 @@ export default {
         height: 1.6rem;
         max-height: 100%;
         background-color: $lighterpurple;
-        color: $darkerpurple;
+        color: $darkerblue;
         &:hover {
             background-color: #fff;
         }
@@ -79,7 +88,7 @@ export default {
         &:hover {
         transform: scale(1.3);
         background-color: $lighterpurple;
-        color: $darkerpurple;
+        color: $darkerblue;
             }
         }
         
