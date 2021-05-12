@@ -2,8 +2,8 @@
     <div class="film-container flex"> 
         <div class="if flex" v-if="this.filmsList.length > 0"> 
                                                                             <!--v-bind:style="{ backgroundImage: 'url(' + image + ')' } -->
-            <ul class="single-film flex" v-for="(film, index) in filmsList"  v-bind:style="{ backgroundImage: 'https://image.tmdb.org/t/p/w342'+ film.poster_path }" v-bind:key="index">
-             <!--   <img class="poster" v-bind:src="'https://image.tmdb.org/t/p/w342' + film.poster_path "> -->
+            <ul class="single-film flex" v-for="(film, index) in filmsList"  v-bind:key="index">
+                <img class="poster" v-bind:src="'https://image.tmdb.org/t/p/w342' + film.poster_path" v-if="'https://image.tmdb.org/t/p/w342' + film.poster_path !== 'null'"> 
                 <li>Title: {{ film.title }} {{film.name}}</li>
                 <li v-show="film.original_title !== film.title">Original Title: {{ film.original_title }}</li>
                 <li v-if="film.original_language === 'it'">Language: {{ film.original_language }} <img class="flag" src="../assets/flagsImg/it.png" alt=""> </li>
