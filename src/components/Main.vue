@@ -1,11 +1,10 @@
 <template>
     <div class="film-container flex"> 
-        <div class="if flex" v-if="this.filmsList.length > 0">                       <!--  :style="{ backgroundImage: `url(${member.coverImage})` }" -->       
-                                                                            <!--v-bind:style="{ backgroundImage: 'url(' + image + ')' } -->
-            <ul class="single-film flex" v-for="(film, index) in filmsList"   v-bind:key="index">
-                <div class="poster" v-if="film.poster_path" v-bind:style="{ backgroundImage: 'url(https://image.tmdb.org/t/p/w342' + film.poster_path + ')' }">
+        <div class="if flex" v-if="this.filmsList.length > 0">            
+            <ul class="single-film flex" v-for="(film, index) in filmsList" v-bind:key="index">
+                <div class="poster" v-if="film.poster_path" v-bind:style="{ backgroundImage: 'url(https://image.tmdb.org/t/p/w342' + film.poster_path + ')'}">
                 </div>
-                <div v-else class="placeholder poster" v-bind:style="{ backgroundImage: 'url(https://www.altavod.com/assets/images/poster-placeholder.png)' }">Title: {{ film.title }} {{film.name}}</div>
+                <div v-else class="placeholder poster" v-bind:style="{ backgroundImage: 'url(https://www.altavod.com/assets/images/poster-placeholder.png)'}">Title: {{ film.title }} {{film.name}}</div>
                 <div class="overlay">
                     <li>Title: {{ film.title }} {{film.name}}</li>
                     <li v-show="film.original_title !== film.title">Original Title: {{ film.original_title }}</li>

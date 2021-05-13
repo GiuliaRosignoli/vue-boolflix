@@ -6,7 +6,7 @@
          </a>
          <a id="kids-icon" href="#">Kids</a>
          <div class="filler"></div>
-        <input type="text" placeholder="Search film"  v-model.trim ="searchFilm">
+        <input type="text" placeholder=" Search film"  v-model.trim ="searchFilm">
         <button @click="$emit('startingSearch', searchFilm)">Search</button>
         <button class="right" @click="resetInputField">Reset</button>
     </div>
