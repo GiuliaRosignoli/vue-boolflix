@@ -3,15 +3,17 @@
         <div class="if flex" v-if="this.filmsList.length > 0">                       <!--  :style="{ backgroundImage: `url(${member.coverImage})` }" -->       
                                                                             <!--v-bind:style="{ backgroundImage: 'url(' + image + ')' } -->
             <ul class="single-film flex" v-for="(film, index) in filmsList"   v-bind:key="index">
-                <div class="poster" v-if="{ backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342' + film.poster_path + ')' } !== { backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342null' + film.poster_path + ')' } " v-bind:style="{ backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342' + film.poster_path + ')' }"></div>
-                <div v-else="{ backgroundImage: "url('../assets/placeholder.png')" }" </div>
+                <div class="poster" v-if="film.poster_path" v-bind:style="{ backgroundImage: 'url(https://image.tmdb.org/t/p/w342' + film.poster_path + ')' }">
+                </div>
+                <div v-else class="poster" v-bind:style="{ backgroundImage: 'url(https://www.altavod.com/assets/images/poster-placeholder.png)' }"> Placeholder image</div>
                 <div class="overlay">
                     <li>Title: {{ film.title }} {{film.name}}</li>
                         <li v-show="film.original_title !== film.title">Original Title: {{ film.original_title }}</li>
                         <li v-if="film.original_language === 'it'">Language: {{ film.original_language }} <img class="flag" src="../assets/flagsImg/it.png" alt=""> </li>
                         <li v-else-if="film.original_language === 'en'">Language: {{ film.original_language }} <img class="flag" src="../assets/flagsImg/en.png" alt=""></li>
                         <li v-else>Language: {{ film.original_language }}</li>
-                    <li>{{ film.vote_average }}</li>
+                        <li>{{ getStars(film.vote_average) }}</li>
+                        <i class="far fa-star"></i>
                 </div>
             </ul>
         </div>
@@ -26,7 +28,12 @@
 export default {
     name: "Main",
     props: ["filmsList"],
-
+    methods: {
+        getStars(rate){
+           return Math.ceil(rate /2);
+         },
+    }
+   
 } // export default
 </script>
 

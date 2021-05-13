@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="general-wrap">
+  
       <header>
        <Header @startingSearch="handler" />
     </header>
@@ -9,7 +9,7 @@
       <Main v-bind:filmsList="films.concat(series)"/>
     </main>
     
-    </div> <!--General wrap -->
+    
     <footer>
       <Footer />
     </footer>
@@ -21,6 +21,7 @@ import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import Footer from './components/Footer.vue';
 import axios from 'axios';
+
 
 export default {
   name: 'App',
@@ -36,8 +37,8 @@ export default {
             apiTrendingURL: "https://api.themoviedb.org/3/trending/movie/week?api_key=e99307154c6dfb0b4750f6603256716d",
             films: [],
             series: [],
-            }
-    }, // return
+            } // / return
+    }, // data
     created(){
       axios.get(this.apiTrendingURL)
             .then(res=>{
@@ -83,7 +84,10 @@ export default {
          handler(searchFilm){
                     this.getFilm(searchFilm);
                     this.getSeries(searchFilm);
-         }
+         },
+
+         
+        
 
       
     }, // methodS section ends here
@@ -91,19 +95,17 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./styles/general.scss"; 
+@import "./styles/vars.scss";
+@import "./styles/utilities.scss";
 
 #app {
-  padding-top: 80px; 
-}
-
-.general-wrap {
- position: relative;
- height: calc(100vh - 80px);
+  padding-top: 90px; 
 }
 
 main {
   background-color: #020733; 
-  height: 100%;
+   height: calc(100vh - 170px);
   overflow-y: auto;
 }
 
