@@ -13,7 +13,7 @@
                     <li v-else>Language: {{ film.original_language }}</li>
                     <i class="fas fa-star" v-for="i in getStars(film.vote_average)" :key="`full-${i}`"></i>
                     <i class="far fa-star" v-for="i in 5 - getStars(film.vote_average)" :key="`empty-${i}`"></i>
-                    <li class="overview">{{ film.overview }}</li>
+                    <li class="overview">Overview: {{ film.overview }}</li>
                 </div>
             </ul>
         </div>
@@ -42,6 +42,10 @@ export default {
 @import "../styles/vars.scss";
 @import "../styles/utilities.scss";
 
+
+.film-container {
+    padding-top: 2rem;
+}
 
 
 .if {
@@ -91,12 +95,16 @@ export default {
 .single-film li img {
     width: 20px;
     height: 20px;
-    padding: 2px;
+    padding: 3px;
 }
 
 .no-results {
     padding: 5rem;
     font-size: 1.8rem;
+}
+
+.fas {
+    color: yellow;
 }
 
 
