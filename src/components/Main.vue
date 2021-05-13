@@ -1,9 +1,10 @@
 <template>
     <div class="film-container flex"> 
-<div class="if flex" v-if="this.filmsList.length > 0">                       <!--  :style="{ backgroundImage: `url(${member.coverImage})` }" -->       
+        <div class="if flex" v-if="this.filmsList.length > 0">                       <!--  :style="{ backgroundImage: `url(${member.coverImage})` }" -->       
                                                                             <!--v-bind:style="{ backgroundImage: 'url(' + image + ')' } -->
             <ul class="single-film flex" v-for="(film, index) in filmsList"   v-bind:key="index">
-                <div class="poster" v-bind:style="{ backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342' + film.poster_path + ')' }"></div>
+                <div class="poster" v-if="{ backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342' + film.poster_path + ')' } !== { backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342null' + film.poster_path + ')' } " v-bind:style="{ backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342' + film.poster_path + ')' }"></div>
+                <div v-else="{ backgroundImage: "url('../assets/placeholder.png') }" </div>
                 <div class="overlay">
                     <li>Title: {{ film.title }} {{film.name}}</li>
                         <li v-show="film.original_title !== film.title">Original Title: {{ film.original_title }}</li>
@@ -49,7 +50,7 @@ export default {
     flex-basis: calc(100% / 5 - 20px);
     height: 180px;
     margin-bottom: 20px;
-    margin: 0.5rem;
+    margin: 0.5rem; 
     .poster {
         width: 100%;
         height: 100%;
@@ -60,7 +61,7 @@ export default {
        height:100%;
        width:100%;
        opacity: 0;
-       transition: background-color 0.5s ease-in-out;
+       transition: background-color 0.3s ease-in-out;
        &:hover {
        background-color: $deepblue;
        opacity: 1;

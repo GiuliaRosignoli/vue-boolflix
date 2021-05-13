@@ -43,6 +43,7 @@ export default {
             .then(res=>{
                 console.log(res.data);
                 this.films= res.data.results;
+              
             
               //  console.log(this.films)
             })
@@ -101,9 +102,9 @@ export default {
 }
 
 main {
-      background-color: #020733;
-      height: 100%;
-      overflow-y: auto;
+  background-color: #020733; 
+  height: 100%;
+  overflow-y: auto;
 }
 
 
