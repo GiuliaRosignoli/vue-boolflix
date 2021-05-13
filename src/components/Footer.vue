@@ -33,8 +33,9 @@ export default {
    }
    .third {
        margin-right: 8rem;
-       padding: 0.7rem 2rem;
+       padding: 0.5rem 2rem;
        background-color: $purple-1;
+       border: 1px solid $white;
    }
 }
 

@@ -37,15 +37,13 @@ export default {
             apiTrendingURL: "https://api.themoviedb.org/3/trending/movie/week?api_key=e99307154c6dfb0b4750f6603256716d",
             films: [],
             series: [],
-            } // / return
+            } // return
     }, // data
     created(){
       axios.get(this.apiTrendingURL)
             .then(res=>{
                 console.log(res.data);
-                this.films= res.data.results;
-              
-            
+                this.films= res.data.results;    
               //  console.log(this.films)
             })
             .catch(err=>{
@@ -64,7 +62,7 @@ export default {
               //  console.log(this.films)
             })
             .catch(err=>{
-                console.log('Error:', err)
+             //   console.log('Error:', err)
             })
         }, //getFilm
 
@@ -72,27 +70,24 @@ export default {
         getSeries(searchFilm) {
             axios.get(this.apiSeriesURL + searchFilm)
             .then(res=>{
-                console.log(res.data);
+            //    console.log(res.data);
                 this.series= res.data.results;
               //  console.log(this.films)
             })
             .catch(err=>{
-                console.log('Error:', err)
+          //      console.log('Error:', err)
             })
         }, //getSeries
 
          handler(searchFilm){
-                    this.getFilm(searchFilm);
-                    this.getSeries(searchFilm);
+              this.getFilm(searchFilm);
+              this.getSeries(searchFilm);
          },
 
-         
-        
-
-      
     }, // methodS section ends here
 } //export default
 </script>
+
 
 <style lang="scss">
 @import "./styles/general.scss"; 
