@@ -4,6 +4,7 @@
          <a href="./home">
             <img v-bind:src="logo" alt="logo">
          </a>
+         <a id="kids-icon" href="#">Kids</a>
          <div class="filler"></div>
         <input type="text" placeholder="Search film"  v-model.trim ="searchFilm">
         <button @click="$emit('startingSearch', searchFilm)">Search</button>
@@ -59,6 +60,11 @@ export default {
             margin: 0.5rem;
             padding: 0.8rem;
         }
+    }
+
+    #kids-icon {
+        align-self: center;
+        padding-left: 1.1rem;
     }
     input {
         align-self: center;
