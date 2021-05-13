@@ -1,6 +1,9 @@
 <template>
-  <div class="footer">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, dolorum culpa. Magni ut, natus distinctio inventore sequi, reprehenderit modi ullam delectus voluptatibus sunt molestias? Fuga, possimus! Perspiciatis eveniet numquam vitae.
+  <div class="footer flex">
+      <span class="first">SEE WHAT'S NEXT.</span>
+      <span class="second">Watch anywhere. Cancel anytime</span>
+      <span class="filler"></span>
+      <span class="third"><a href="#">JOIN FREE FOR A MONTH</a></span>
   </div>
 </template>
 
@@ -17,7 +20,22 @@ export default {
 
 .footer {
     height: 80px;
+    padding: 1rem;
     background-color: $deepblue;
+    justify-content: flex-start;
+    align-items: center;
+   .first {
+        font-size: 1.5rem;
+   }
+    .second {
+       padding: 1rem;
+       font-size: 1rem ;
+   }
+   .third {
+       margin-right: 8rem;
+       padding: 1rem 2rem;
+       background-color: $purple-1;
+   }
 }
 
 </style>

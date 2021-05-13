@@ -5,7 +5,7 @@
             <ul class="single-film flex" v-for="(film, index) in filmsList"   v-bind:key="index">
                 <div class="poster" v-if="film.poster_path" v-bind:style="{ backgroundImage: 'url(https://image.tmdb.org/t/p/w342' + film.poster_path + ')' }">
                 </div>
-                <div v-else class="poster" v-bind:style="{ backgroundImage: 'url(https://www.altavod.com/assets/images/poster-placeholder.png)' }"> Placeholder image</div>
+                <div v-else class="placeholder poster" v-bind:style="{ backgroundImage: 'url(https://www.altavod.com/assets/images/poster-placeholder.png)' }">Title: {{ film.title }}</div>
                 <div class="overlay">
                     <li>Title: {{ film.title }} {{film.name}}</li>
                         <li v-show="film.original_title !== film.title">Original Title: {{ film.original_title }}</li>
@@ -13,7 +13,9 @@
                         <li v-else-if="film.original_language === 'en'">Language: {{ film.original_language }} <img class="flag" src="../assets/flagsImg/en.png" alt=""></li>
                         <li v-else>Language: {{ film.original_language }}</li>
                         <li>{{ getStars(film.vote_average) }}</li>
-                        <i class="far fa-star"></i>
+                        <i class="fas fa-star" v-for="i in getStars(film.vote_average)" :key="`full-${i}`"></i>
+                        <i class="far fa-star" v-for="i in 5 - getStars(film.vote_average)" :key="`empty-${i}`"></i>
+                        <li>{{ film.overview }}</li>
                 </div>
             </ul>
         </div>
@@ -77,6 +79,11 @@ export default {
    
 }
 
+.placeholder.poster {
+    background-size: cover;
+    background-position: center;
+    color: $deepblue;
+}
 .single-film li img {
     width: 20px;
     height: 20px;

@@ -68,10 +68,12 @@ export default {
         max-width: 100%;
         height: 1.6rem;
         max-height: 100%;
-        background-color: $lighterpurple;
-        color: $darkerblue;
+        background-color: $deepblue;
+        color: $white;
+        border: 1px solid $white;
         &:hover {
             background-color: #fff;
+            color: $deepblue;
         }
 
     }
@@ -83,12 +85,11 @@ export default {
         height: 2.1rem;
         padding: 5px;
         background-color: $purple-1;
-        font-weight: bold;
-        color: $lighterpurple;
+        color: $white;
         &:hover {
         transform: scale(1.3);
         background-color: $lighterpurple;
-        color: $darkerblue;
+        color: $white
             }
         }
         
