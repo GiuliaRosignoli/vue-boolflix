@@ -4,7 +4,7 @@
                                                                             <!--v-bind:style="{ backgroundImage: 'url(' + image + ')' } -->
             <ul class="single-film flex" v-for="(film, index) in filmsList"   v-bind:key="index">
                 <div class="poster" v-if="{ backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342' + film.poster_path + ')' } !== { backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342null' + film.poster_path + ')' } " v-bind:style="{ backgroundImage: 'url(' + 'https://image.tmdb.org/t/p/w342' + film.poster_path + ')' }"></div>
-                <div v-else="{ backgroundImage: "url('../assets/placeholder.png') }" </div>
+                <div v-else="{ backgroundImage: "url('../assets/placeholder.png')" }" </div>
                 <div class="overlay">
                     <li>Title: {{ film.title }} {{film.name}}</li>
                         <li v-show="film.original_title !== film.title">Original Title: {{ film.original_title }}</li>
