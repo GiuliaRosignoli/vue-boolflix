@@ -62,7 +62,7 @@ export default {
               //  console.log(this.films)
             })
             .catch(err=>{
-             //   console.log('Error:', err)
+             console.log('Error:', err)
             })
         }, //getFilm
 
@@ -70,12 +70,12 @@ export default {
         getSeries(searchFilm) {
             axios.get(this.apiSeriesURL + searchFilm)
             .then(res=>{
-            //    console.log(res.data);
+                console.log(res.data);
                 this.series= res.data.results;
               //  console.log(this.films)
             })
             .catch(err=>{
-          //      console.log('Error:', err)
+               console.log('Error:', err)
             })
         }, //getSeries
 
