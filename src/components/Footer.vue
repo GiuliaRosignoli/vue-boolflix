@@ -33,7 +33,7 @@ export default {
    }
    .third {
        margin-right: 8rem;
-       padding: 1rem 2rem;
+       padding: 0.7rem 2rem;
        background-color: $purple-1;
    }
 }
