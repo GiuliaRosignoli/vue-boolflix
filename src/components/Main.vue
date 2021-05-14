@@ -74,9 +74,10 @@ export default {
        width:100%;
        padding: 7px;
        opacity: 0;
+       overflow-y: auto;
        transition: background-color 0.3s ease-in-out;
        &:hover {
-       background-color: $deepblue;
+       background:rgba(0,0,0,0.6);
        opacity: 1;
        .overview {
            padding-top: 0.7rem;
