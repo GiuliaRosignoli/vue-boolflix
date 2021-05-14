@@ -5,11 +5,11 @@
             <img v-bind:src="logo" alt="logo">
          </a>
          <ul class="menu flex">
-             <li>Home</li>
-             <li>TV Shows</li>
-             <li>Movies</li>
-             <li>Latest</li>
-             <li>My List</li>
+             <li><a href="./home">Home</a></li>
+             <li><a href="#">TV Shows</a></li>
+             <li><a href="#">Movies</a></li>
+             <li><a href="#">Latest</a></li>
+             <li><a href="#">My List</a></li>
          </ul>
          <div class="filler"></div>
         <input type="text" placeholder=" Search"  v-model.trim ="searchFilm">
