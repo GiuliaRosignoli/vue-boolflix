@@ -5,7 +5,7 @@
             <img v-bind:src="logo" alt="logo">
          </a>
          <ul class="menu flex">
-             <li v-for="(item,index) in menuList" :key="index">{{item.ref}}<a href="./home"></a></li>
+             <a class="flex" href="./home"><li v-for="(item,index) in menuList" :key="index">{{item.ref}}</li></a>
          </ul>
          <div class="filler"></div>
         <input type="text" placeholder=" Search"  v-model.trim ="searchFilm">
@@ -77,7 +77,7 @@ export default {
     .menu {
         align-self: center;
         padding-left: 0.9rem;
-       li {
+        a li {
             padding-right: 0.7rem;
             cursor: pointer;
        }
