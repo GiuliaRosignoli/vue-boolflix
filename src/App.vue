@@ -39,18 +39,21 @@ export default {
             series: [],
             } // return
     }, // data
-    created(){  /* First API call - Trending */
-      axios.get(this.apiTrendingURL)
-            .then(res=>{
-                console.log(res.data);
-                this.films= res.data.results;    
-              //  console.log(this.films)
-            })
-            .catch(err=>{
-                console.log('Error:', err)
-            })
+    created(){
+      this. callApiTrending()
     },
-
+  /*  created(){  /* First API call - Trending 
+      axios.get(this.apiTrendingURL)
+        .then(res=>{
+            console.log(res.data);
+            this.films= res.data.results;    
+          //  console.log(this.films)
+        })
+        .catch(err=>{
+            console.log('Error:', err)
+        })
+      }, */
+    
     methods: {
         getFilm(searchFilm) {
             axios.get(this.apiURL + searchFilm)
@@ -83,6 +86,21 @@ export default {
               this.getFilm(searchFilm);
               this.getSeries(searchFilm);
          },
+
+         callApiTrending(){
+           axios.get(this.apiTrendingURL)
+        .then(res=>{
+            console.log(res.data);
+            this.films= res.data.results;    
+          //  console.log(this.films)
+        })
+        .catch(err=>{
+            console.log('Error:', err)
+        })
+         }
+         
+       
+
 
     }, // methodS section ends here
 } //export default
