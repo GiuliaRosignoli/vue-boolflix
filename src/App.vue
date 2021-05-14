@@ -42,17 +42,6 @@ export default {
     created(){
       this. callApiTrending()
     },
-  /*  created(){  /* First API call - Trending 
-      axios.get(this.apiTrendingURL)
-        .then(res=>{
-            console.log(res.data);
-            this.films= res.data.results;    
-          //  console.log(this.films)
-        })
-        .catch(err=>{
-            console.log('Error:', err)
-        })
-      }, */
     
     methods: {
         getFilm(searchFilm) {
@@ -100,8 +89,6 @@ export default {
          }
          
        
-
-
     }, // methodS section ends here
 } //export default
 </script>
