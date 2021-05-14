@@ -2,11 +2,11 @@
   <div id="app">
   
       <header>
-       <Header @startingSearch="handler" />
+       <Header @startingSearch="handler"  />
     </header>
 
     <main>
-      <Main v-bind:filmsList="films.concat(series)"/>
+      <Main v-bind:filmsList="films.concat(series)"  @goBacktoTrending="callApiTrending"/>
     </main>
     
     

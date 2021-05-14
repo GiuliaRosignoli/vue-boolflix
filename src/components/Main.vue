@@ -17,8 +17,9 @@
                 </div>
             </ul>
         </div>
-        <div class="result-cont" v-else> <!-- No results found - message -->
+        <div class="result-cont flex" v-else> <!-- No results found - message -->
             <div class="no-results"> Oh darn. We don't have that. Try searching for another film or series.</div>
+            <button @click="$emit('goBacktoTrending')" >Giuliaflix Home</button>
         </div>
     </div>
     
@@ -100,9 +101,21 @@ export default {
     padding: 3px;
 }
 
-.no-results {
+.result-cont{
+    flex-direction: column;
+    .no-results {
     padding: 5rem;
     font-size: 1.8rem;
+    }
+    button {
+        align-self: center;
+        width: 12rem;
+        padding: 0.7rem 2.5rem;
+        background-color: $purple-1;
+        border: 1px solid $white;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
 }
 
 .fas {
