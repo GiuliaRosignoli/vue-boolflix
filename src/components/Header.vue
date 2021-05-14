@@ -4,11 +4,19 @@
          <a href="./home">
             <img v-bind:src="logo" alt="logo">
          </a>
-         <a id="kids-icon" href="#">Kids</a>
+         <ul class="menu flex">
+             <li>Home</li>
+             <li>TV Shows</li>
+             <li>Movies</li>
+             <li>Latest</li>
+             <li>My List</li>
+         </ul>
          <div class="filler"></div>
-        <input type="text" placeholder=" Search film"  v-model.trim ="searchFilm">
+        <input type="text" placeholder=" Search"  v-model.trim ="searchFilm">
         <button @click="$emit('startingSearch', searchFilm)">Search</button>
         <button class="right" @click="resetInputField">Reset</button>
+         <a id="kids-icon" href="#">Kids</a>
+        <div class="box"><img src="../assets/GiuliaRosignoli.jpg" alt=""></div>
     </div>
 </div>
     
@@ -23,7 +31,7 @@ export default {
         return {
             searchFilm: "",
             logo: "https://fontmeme.com/permalink/210510/3f37c13a0705940786b250f7aaa9cafa.png",
-        }
+       }
     },
     methods: {
         resetInputField(){
@@ -62,8 +70,19 @@ export default {
         }
     }
 
+    /* First list -menu */
+    .menu {
+        align-self: center;
+        padding-left: 0.9rem;
+       li {
+            padding-right: 0.7rem;
+            cursor: pointer;
+       }
+    }
+
     #kids-icon {
         align-self: center;
+        margin-right: 1.7rem;
         padding-left: 1.1rem;
     }
     input {
@@ -92,6 +111,7 @@ export default {
         padding: 5px;
         background-color: $purple-1;
         color: $white;
+        cursor: pointer;
         &:hover {
         transform: scale(1.3);
         background-color: $lighterpurple;
@@ -101,15 +121,23 @@ export default {
         
     
     button.right {
-        margin-right: 3rem;
+        margin-right: 0.8rem;
         width: 2.7rem;
         height: 1.6rem;
         font-size: 0.5rem;
     }
 }
 
-.filler {
-    flex-grow: 1;
+.box {
+    align-self: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 
 </style>

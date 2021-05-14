@@ -63,6 +63,7 @@ export default {
     margin-bottom: 20px;
     margin: 0.2rem; 
     font-size: 0.9rem;
+    cursor: pointer;
     .poster {
         width: 100%;
         height: 100%;
