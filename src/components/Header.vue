@@ -5,18 +5,14 @@
             <img v-bind:src="logo" alt="logo">
          </a>
          <ul class="menu flex">
-             <li><a href="./home">Home</a></li>
-             <li><a href="#">TV Shows</a></li>
-             <li><a href="#">Movies</a></li>
-             <li><a href="#">Latest</a></li>
-             <li><a href="#">My List</a></li>
+             <li v-for="(item,index) in menuList" :key="index">{{item.ref}}<a href="./home"></a></li>
          </ul>
          <div class="filler"></div>
         <input type="text" placeholder=" Search"  v-model.trim ="searchFilm">
         <button @click="$emit('startingSearch', searchFilm)">Search</button>
         <button class="right" @click="resetInputField">Reset</button>
          <a id="kids-icon" href="#">Kids</a>
-        <div class="box"><img src="../assets/GiuliaRosignoli.jpg" alt=""></div>
+        <div class="box"><img src="../assets/GiuliaRosignoli.jpg" alt="profile pic"></div>
     </div>
 </div>
     
@@ -31,6 +27,13 @@ export default {
         return {
             searchFilm: "",
             logo: "https://fontmeme.com/permalink/210510/3f37c13a0705940786b250f7aaa9cafa.png",
+            menuList: [
+                {ref: "Home"},
+                {ref: "TV Shows"},
+                {ref: "Movies"},
+                {ref: "Latest"},
+                {ref: "List"}
+            ],
        }
     },
     methods: {
@@ -119,7 +122,6 @@ export default {
             }
         }
         
-    
     button.right {
         margin-right: 0.8rem;
         width: 2.7rem;
@@ -128,7 +130,7 @@ export default {
     }
 }
 
-.box {
+.box {  /* profile pic container */
     align-self: center;
     width: 2.6rem;
     height: 2.6rem;

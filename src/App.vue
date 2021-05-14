@@ -39,7 +39,7 @@ export default {
             series: [],
             } // return
     }, // data
-    created(){
+    created(){  /* First API call - Trending */
       axios.get(this.apiTrendingURL)
             .then(res=>{
                 console.log(res.data);
@@ -94,7 +94,7 @@ export default {
 @import "./styles/vars.scss";
 @import "./styles/utilities.scss";
 
-#app {
+#app { 
   padding-top: 90px; 
 }
 

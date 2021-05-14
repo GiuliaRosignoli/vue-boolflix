@@ -83,11 +83,11 @@ export default {
        .overview {
            padding-top: 0.7rem;
            font-size: 0.6rem;
-       }
+            }
         }
-   }
+   } /*overlay */
    
-}
+} /* single-film */
 
 .placeholder.poster {
     background-size: cover;
